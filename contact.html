@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +14,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
     -->
 </head>
-<body>   
+
+<body>
     <section class="sub-header">
         <nav>
             <a href="index.html"><img src="images/logo.png"></a>
@@ -25,6 +27,7 @@
                     <li><a href="course.html">COURSE</a></li>
                     <li><a href="blog.html">BLOG</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="login.html">LOGOUT</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -35,8 +38,10 @@
     <!-------------- contact us ------------------>
 
     <section class="location">
-        
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12447.318959600208!2d77.22902727744072!3d28.64633769435564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1634970157870!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12447.318959600208!2d77.22902727744072!3d28.64633769435564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sDelhi!5e0!3m2!1sen!2sin!4v1634970157870!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
     </section>
 
@@ -63,7 +68,7 @@
                         <h5>shahafnan786@gmail.com</h5>
                         <p>Email us your query</p>
                     </span>
-                </div>    
+                </div>
             </div>
             <div class="contact-col">
                 <form action="form-handler.php" method="post">
@@ -81,12 +86,14 @@
 
     <section class="footer">
         <h4>About Us</h4>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae ipsam culpa placeat reiciendis ad aliquam facere hic. <br> Error doloremque sunt cupiditate animi possimus eveniet doloribus. Nihil vel alias iure necessitatibus!</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae ipsam culpa placeat reiciendis ad aliquam
+            facere hic. <br> Error doloremque sunt cupiditate animi possimus eveniet doloribus. Nihil vel alias iure
+            necessitatibus!</p>
         <div class="icons">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-linkedin"></i>
+            <a href="https://www.facebook.com/shahafnan.ansari" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://github.com/Afnan215" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="https://www.instagram.com/ansari_afnan_" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/shah-afnan-ansari" target="_blank"><i class="fa fa-linkedin"></i></a>
         </div>
         <p>Made with <i class="fa fa-heart-o"></i> by Shah Afnan Ansari</p>
     </section>
@@ -97,14 +104,15 @@
     <script>
 
         var navLinks = document.getElementById("navLinks");
-        function showMenu(){
+        function showMenu() {
             navLinks.style.right = "0";
         }
-        function hideMenu(){
+        function hideMenu() {
             navLinks.style.right = "-200px";
         }
 
     </script>
-    
+
 </body>
+
 </html>

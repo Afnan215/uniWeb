@@ -1,0 +1,65 @@
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.border-md {
+  border-width: 2px;
+}
+
+
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+body {
+  min-height: 100vh;
+}
+/* 
+.form-control:not(select) {
+  padding: 0.rem 0.5rem;
+} */
+
+select.form-control {
+  height: 52px;
+  padding-left: 0.5rem;
+}
+
+.form-control::placeholder {
+  color: #ccc;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.input-group{
+border:3px solid rgba(179, 182, 179, 0.321);
+border-radius: 5px;
+}
+.btn{
+  width: 100%;
+}
+.container{
+  width:80vw;
+  border-radius: 1rem;
+  /* border: 2px solid #ff0; */
+  background: #fff;
+  box-shadow: 2px 8px 12px rgba(179, 182, 179, 1);
+}
+body{
+  background: whitesmoke;
+}
+.logo{
+  margin: 0.4rem 1rem 0 10rem;
+  font-family: 'Playfair Display', serif;
+}
