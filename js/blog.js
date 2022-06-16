@@ -3,6 +3,10 @@ const emailInput = document.getElementById('email');
 const commentInput = document.getElementById('comment');
 const commentBtn = document.querySelector('.comment-btn');
 
+
+const loginPopup = document.querySelector('.message-popup');
+const responseMssg = document.querySelector('#response-mssg');
+
 let formData = {
     userName: '',
     userEmaIL: '',
@@ -23,6 +27,7 @@ commentInput.addEventListener('change', (e) => {
 
 
 const postComment = (e, formData) => {
+
     e.preventDefault();
     fetch('http://192.168.0.122:4000/post-comment', {
         method: 'post',
@@ -36,8 +41,13 @@ const postComment = (e, formData) => {
         })
     }).then(resp => resp.json())
         .then(data => {
-            console.log(data)
-            blogMessage = data.message
+            if (data.success) {
+                responseMssg.innerHTML = data?.message
+                loginPopup.classList.add('show');
+                setTimeout(() => {
+                    loginPopup.classList.remove('show');
+                }, 2000)
+            }
         })
 }
 

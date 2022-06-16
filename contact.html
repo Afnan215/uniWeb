@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University Web Design</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./popup.css">
     <script src="https://use.fontawesome.com/aaab29d6c2.js"></script>
     <!--
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +28,7 @@
                     <li><a href="course.html">COURSE</a></li>
                     <li><a href="blog.html">BLOG</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
-                    <li><a href="login.html">LOGOUT</a></li>
+                    <li><a href="#" id="logout">LOGOUT</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -71,16 +72,20 @@
                 </div>
             </div>
             <div class="contact-col">
-                <form action="form-handler.php" method="post">
-                    <input type="text" name="name" placeholder="Enter your name" required>
-                    <input type="email" name="email" placeholder="Enter Email address" required>
-                    <input type="text" name="subject" placeholder="Enter your subject" required>
-                    <textarea rows="8" name="message" placeholder="Message" required></textarea>
-                    <button type="submit" class="hero-btn red-btn">Send Message</button>
+                <form class="comment-form" method="post">
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" id="email" placeholder="Enter Email address" required>
+                    <input type="text" name="subject" id="subject" placeholder="Enter your subject" required>
+                    <textarea rows="8" name="message" id="message" placeholder="Message" required></textarea>
+                    <input type="button" class="hero-btn red-btn" value="Send Message" />
                 </form>
             </div>
         </div>
     </section>
+
+    <div class="message-popup" style="background-color:#f44336">
+        <p id="response-mssg" style="color: #fff;"></p>
+    </div>
 
     <!------- Footer ------->
 
@@ -102,6 +107,21 @@
     <!-------- JavaScript for toggle --------->
 
     <script>
+        const logoutBtn = document.querySelector('#logout');
+        // (function () {
+        //     if (localStorage.getItem('email') && localStorage.getItem('loggedIn')) {
+        //         window.location = './contact.html';
+        //     } else {
+        //         localStorage.setItem('loggedIn', false);
+        //         window.location = './login.html'
+        //     }
+        // })()
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('email')
+            localStorage.removeItem('loggedIn')
+            window.location = './login.html'
+        });
+
 
         var navLinks = document.getElementById("navLinks");
         function showMenu() {
@@ -112,6 +132,7 @@
         }
 
     </script>
+    <script src="./js/contact.js"></script>
 
 </body>
 
