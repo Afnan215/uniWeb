@@ -22,14 +22,14 @@ messageInput.addEventListener('change', (e) => messageFormData.message = e.targe
 
 const submitMessageForm = (e, formData) => {
     e.preventDefault();
-    fetch('http://192.168.0.122:4000/contact-us', {
+    fetch('https://uni-portal-backend.herokuapp.com/contact-us', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             userName: formData.name,
-            email: formData.emai,
+            email: formData.email,
             subjects: formData.subject,
             message: formData.message
         }),
@@ -42,9 +42,20 @@ const submitMessageForm = (e, formData) => {
                 setTimeout(() => {
                     loginPopup.classList.remove('show');
                 }, 2000)
+            } else {
+                responseMssg.innerHTML = data?.message
+                loginPopup.classList.add('show');
+
+                setTimeout(() => {
+                    loginPopup.classList.remove('show');
+                }, 2000)
             }
+
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            alert(err.message);
+
+        })
 
 }
 

@@ -43,11 +43,7 @@ passwordConfirmation.addEventListener('change', (e) => {
 
 const submitRegisterForm = (e, formData) => {
     e.preventDefault();
-
-
-    // if (formData.password === formData.conPassword) {
-    // registrationLoading = true;
-    fetch('http://192.168.0.122:4000/register-user', {
+    fetch('https://uni-portal-backend.herokuapp.com/register-user', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
@@ -71,17 +67,19 @@ const submitRegisterForm = (e, formData) => {
                     loginPopup.classList.remove('show');
                     window.location = './login.html';
                 }, 2000)
+            } else {
+                responseMssg.innerHTML = data?.message
+                loginPopup.classList.add('show');
+                setTimeout(() => {
+                    loginPopup.classList.remove('show');
+                }, 2000)
             }
 
         })
         .catch(err => {
-            registrationLoading = false;;
-            alert(data.message)
-        })
+            alert(err.message);
 
-    //     }else{
-    // alert('Confirm password not matched')
-    //     }
+        })
 }
 
 

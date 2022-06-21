@@ -22,7 +22,7 @@ loginPassword.addEventListener('change', (e) => {
 });
 const loginFormSubmit = (e, formData) => {
     e.preventDefault();
-    fetch('http://192.168.0.122:4000/login', {
+    fetch('https://uni-portal-backend.herokuapp.com/login', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
@@ -34,11 +34,11 @@ const loginFormSubmit = (e, formData) => {
     })
         .then(resp => resp.json())
         .then(data => {
-            alert(data.message);
             if (data.success) {
                 localStorage.setItem('email', data.data.email)
                 localStorage.setItem('name', data.data.firstName + data.data.lastName);
                 localStorage.setItem('loggedIn', true);
+                loginPopup.style.remove?.('background')
                 responseMssg.innerHTML = data?.message
                 loginPopup.classList.add('show');
                 setTimeout(() => {
@@ -46,10 +46,18 @@ const loginFormSubmit = (e, formData) => {
                     window.location = './index.html';
                 }, 2000)
                 // window.location = './index.html'
+            } else {
+                responseMssg.innerHTML = data?.message
+                loginPopup.classList.add('show');
+                setTimeout(() => {
+                    loginPopup.classList.remove('show');
+                    loginPopup.style.remove('background')
+                }, 2000)
             }
+
         })
         .catch(err => {
-            alert(err.message)
+            alert(err.message);
         })
 
 }
