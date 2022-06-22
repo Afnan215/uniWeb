@@ -10,92 +10,90 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./popup.css">
+
 </head>
 
 <body>
+    <div class="triangle"></div>
     <!-- Navbar-->
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light py-3">
-            <div class="logo">
-                <!-- Navbar Brand -->
-                <a href="#" class="navbar-brand">
-                    <h4>University Admission Portal</h4>
-                </a>
+    <div style="z-index: 2;position: absolute;top: 0;">
+        <header class="header">
+            <nav class="navbar navbar-expand-lg navbar-light py-3">
+                <div class="logo">
+                    <!-- Navbar Brand -->
+                    <a href="#" class="navbar-brand">
+                        <!-- <h4>University Admission Portal</h4> -->
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <div style="display:flex;flex-direction: row;justify-content: center;align-items: center; margin-left: 5rem;">
+            <div class="container">
+                <!-- Registeration Form -->
+                <div class="col-md-12 col-lg-12">
+                    <form action="post">
+                        <div class="row">
+
+                            <div class="col-md-12 pr-lg-12" style="text-align:center">
+                                <h3>University Admission Portal</h3>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="input-group col-lg-12 mb-4">
+                                <div class="input-group-prepend py-2">
+                                    <span class="input-group-text bg-white px-4 border-0">
+                                        <i class="fa fa-envelope text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="login-email" type="email" name="email" placeholder="Email Address"
+                                    class="form-control bg-white border-0">
+                            </div>
+
+                            <!-- Password -->
+                            <div class="input-group col-lg-6 mb-4">
+                                <div class="input-group-prepend py-2">
+                                    <span class="input-group-text bg-white px-4 border-0">
+                                        <i class="fa fa-lock text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="login-password" type="password" name="password" placeholder="Password"
+                                    class="form-control bg-white border-0">
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group col-lg-12 mx-auto mb-4 w-100">
+                                <a href="#" class="btn btn-primary btn-block py-2" id="login-btn">
+                                    <span class="font-weight-bold">Login</span>
+                                </a>
+                            </div>
+
+                            <!-- Already Registered -->
+                            <div class="text-center w-100 extra">
+                                <p class="text-muted font-weight-bold">Don't have an account? <a
+                                        href="registration.html" class="text-primary ml-2">Register here</a>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </nav>
-    </header>
 
-
-    <div class="container">
-        <div class="row py-5 mt-2 align-items-center">
             <!-- For Demo Purpose -->
-            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-                <img src="./images/Online_Registration_Illustration_vector_concept_generated.jpg" alt=""
-                    class="img-fluid mb-3 d-none d-md-block">
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0 " style="margin-right:10rem">
+                <!-- <img src="./images/Online_Registration_Illustration_vector_concept_generated.jpg" alt="" -->
+                <img src="./images/login.png" alt="" class="img-fluid mb-3 d-none d-md-block">
                 <!-- <h1>Sign into your account</h1> -->
-
-            </div>
-
-            <!-- Registeration Form -->
-            <div class="col-md-7 col-lg-6 ml-auto">
-                <form action="post">
-                    <div class="row">
-
-                        <div class="col-lg-12 mb-4 ">
-                            <h3>Sign into your account</h3>
-                        </div>
-
-                        <!-- Email Address -->
-                        <div class="input-group col-lg-12 mb-4">
-                            <div class="input-group-prepend py-2">
-                                <span class="input-group-text bg-white px-4 border-0">
-                                    <i class="fa fa-envelope text-muted"></i>
-                                </span>
-                            </div>
-                            <input id="email" type="email" name="email" placeholder="Email Address"
-                                class="form-control bg-white border-0">
-                        </div>
-
-                        <!-- Password -->
-                        <div class="input-group col-lg-6 mb-4">
-                            <div class="input-group-prepend py-2">
-                                <span class="input-group-text bg-white px-4 border-0">
-                                    <i class="fa fa-lock text-muted"></i>
-                                </span>
-                            </div>
-                            <input id="password" type="password" name="password" placeholder="Password"
-                                class="form-control bg-white border-0">
-                        </div>
-
-                        <!-- Submit Button -->
-                        <div class="form-group col-lg-12 mx-auto mb-4 w-100">
-                            <a href="#" class="btn btn-primary btn-block py-2">
-                                <span class="font-weight-bold">Login</span>
-                            </a>
-                        </div>
-
-                        <!-- Already Registered -->
-                        <div class="text-center w-100">
-                            <p class="text-muted font-weight-bold">Don't have an account? <a href="registration.html"
-                                    class="text-primary ml-2">Register here</a>
-                            </p>
-                        </div>
-
-                    </div>
-                </form>
             </div>
         </div>
     </div>
 
-    <script src="./js/registration.js"></script>
-    <script>
-        (function () {
-            fetch('', {
-                method: 'get'
-            }).then(rep => rep.json())
-                .then(data => console.log(data))
-        })()
-    </script>
+    <div class="message-popup" style="background-color:#0B5ED7">
+        <p id="response-mssg" style="color: #fff;"></p>
+    </div>
+
+    <script src="./js/login.js"></script>
 
 </body>
 

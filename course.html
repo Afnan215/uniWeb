@@ -22,7 +22,7 @@
                     <li><a href="course.html">COURSE</a></li>
                     <li><a href="blog.html">BLOG</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
-                    <li><a href="login.html">LOGOUT</a></li>
+                    <li><a href="#" id="logout">LOGOUT</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -117,6 +117,20 @@
     <!-------- JavaScript for toggle --------->
 
     <script>
+        const logoutBtn = document.querySelector('#logout');
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('email')
+            localStorage.removeItem('loggedIn')
+            window.location = './login.html'
+        })
+        // (function () {
+        //     if (localStorage.getItem('email') && localStorage.getItem('loggedIn')) {
+        //         window.location = './course.html';
+        //     } else {
+        //         localStorage.setItem('loggedIn', false);
+        //         window.location = './login.html'
+        //     }
+        // })()
 
         var navLinks = document.getElementById("navLinks");
         function showMenu() {

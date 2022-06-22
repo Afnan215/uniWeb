@@ -2,9 +2,28 @@
   border-width: 2px;
 }
 
-body {
-  min-height: 100vh;
+
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+body {
+  max-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
 /* 
 .form-control:not(select) {
   padding: 0.rem 0.5rem;
@@ -20,27 +39,76 @@ select.form-control {
   font-weight: bold;
   font-size: 0.9rem;
 }
+
 .form-control:focus {
   box-shadow: none;
 }
-.input-group{
-border:3px solid rgba(179, 182, 179, 0.321);
-border-radius: 5px;
+
+.input-group {
+  border: 3px solid rgba(179, 182, 179, 0.321);
+  border-radius: 5px;
 }
-.btn{
+
+.btn {
   width: 100%;
 }
-.container{
-  width:80vw;
-  border-radius: 1rem;
+
+.container {
+  width: 30rem;
+  /* border-radius: 1rem; */
   /* border: 2px solid #ff0; */
   background: #fff;
-  box-shadow: 2px 8px 12px rgba(179, 182, 179, 1);
+  box-shadow: -3px 4px 12px rgba(123, 124, 123, 0.433);
 }
-body{
-  background: whitesmoke;
-}
-.logo{
+
+
+
+.logo {
   margin: 0.4rem 1rem 0 10rem;
   font-family: 'Playfair Display', serif;
+}
+
+/* .message-popup {
+  width: 20rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  padding: 0px 2rem;
+  border-radius: 5px;
+  vertical-align: middle;
+  text-align: center;
+  z-index: 5;
+}
+
+.message-popup.show {
+  transform: translateX(0%);
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.message-popup>p {
+  padding: 1rem 1rem 0 1rem;
+} */
+
+.triangle {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  /* z-index: 0; */
+}
+
+.triangle:after {
+  bottom: 0;
+  position: absolute;
+  content: ' ';
+  border-top: 100vh solid #008ce6;
+  border-left: 100vw solid transparent;
+  width: 0;
+}
+
+form {
+  padding: 2rem 3rem;
 }
