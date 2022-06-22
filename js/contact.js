@@ -42,9 +42,20 @@ const submitMessageForm = (e, formData) => {
                 setTimeout(() => {
                     loginPopup.classList.remove('show');
                 }, 2000)
+            } else {
+                responseMssg.innerHTML = data?.message
+                loginPopup.classList.add('show');
+
+                setTimeout(() => {
+                    loginPopup.classList.remove('show');
+                }, 2000)
             }
+
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            alert(err.message);
+
+        })
 
 }
 

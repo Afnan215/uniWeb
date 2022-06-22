@@ -39,7 +39,8 @@ const postComment = (e, formData) => {
             email: formData.userEmaIL,
             comment: formData.userComment
         })
-    }).then(resp => resp.json())
+    })
+        .then(resp => resp.json())
         .then(data => {
             if (data.success) {
                 responseMssg.innerHTML = data?.message
@@ -47,7 +48,18 @@ const postComment = (e, formData) => {
                 setTimeout(() => {
                     loginPopup.classList.remove('show');
                 }, 2000)
+            } else {
+                responseMssg.innerHTML = data?.message
+                loginPopup.classList.add('show');
+
+                setTimeout(() => {
+                    loginPopup.classList.remove('show');
+                }, 2000)
             }
+
+        })
+        .catch(err => {
+            alert(err.message)
         })
 }
 

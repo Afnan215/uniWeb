@@ -35,11 +35,11 @@ const loginFormSubmit = (e, formData) => {
     })
         .then(resp => resp.json())
         .then(data => {
-            alert(data.message);
             if (data.success) {
                 localStorage.setItem('email', data.data.email)
                 localStorage.setItem('name', data.data.firstName + data.data.lastName);
                 localStorage.setItem('loggedIn', true);
+                loginPopup.style.remove?.('background')
                 responseMssg.innerHTML = data?.message
                 loginPopup.classList.add('show');
                 setTimeout(() => {
@@ -47,10 +47,18 @@ const loginFormSubmit = (e, formData) => {
                     window.location = './index.html';
                 }, 2000)
                 // window.location = './index.html'
+            } else {
+                responseMssg.innerHTML = data?.message
+                loginPopup.classList.add('show');
+                setTimeout(() => {
+                    loginPopup.classList.remove('show');
+                    loginPopup.style.remove('background')
+                }, 2000)
             }
+
         })
         .catch(err => {
-            alert(err.message)
+            alert(err.message);
         })
 
 }
